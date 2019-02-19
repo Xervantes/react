@@ -18,11 +18,17 @@ const Product = ({product}) => {
     );
 };
 
+// Product.propTypes = {
+//     //product: PropTypes.object.isRequired
+//     name: PropTypes.string.isRequired,
+//     price: PropTypes.string.isRequired
+//
+// };
 Product.propTypes = {
-    product: PropTypes.object.isRequired
-    // name: PropTypes.string.isRequired,
-    // price: PropTypes.string.isRequired
-
-};
+    product: PropTypes.shape({
+        name: PropTypes.string,
+        price: PropTypes.string
+    })
+}
 
 export default Product;
