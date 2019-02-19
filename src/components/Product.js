@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Product = ({product}) => {
+const Product = ({product, cb}) => {
     const {name, price, quanity, relatedProducts} = product;
     const actFast = quanity < 5 ? <h3>Only {quanity} left in stock! Act Fast!</h3> : null;
     const relatedProductList = relatedProducts ?
@@ -10,7 +10,7 @@ const Product = ({product}) => {
         <div>
             {actFast}
             <p>{name} {price}</p>
-            <button>Click to Purchase</button>
+            <button onClick={() => cb(name)}>Click to Purchase</button>
             <ul>
                 {relatedProductList}
             </ul>
